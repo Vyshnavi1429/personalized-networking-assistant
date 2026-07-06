@@ -33,29 +33,31 @@ networking_assistant/
 
 
 
-👥 Project Team Matrix
-Vyshnavi Mutyalapalli
+## 👥 Project Team Matrix
+*   **Vyshnavi Mutyalapalli**
+*   **Rahul Dev Bontha**
+*   **Bommanaboina Nagaraju**
+*   **Nishitha Kodi**
 
-Rahul Dev Bontha
+---
 
-Bommanaboina Nagaraju
+## ⚙️ Local Setup Instructions
 
-Nishitha Kodi
-
-⚙️ Local Setup Instructions
-1. Install Dependencies
+### 1. Install Dependencies
 Open your project terminal and run:
-
-Bash
+```bash
 pip install -r requirements.txt
-2. Start Backend Server (FastAPI)
-Bash
+
+### 🚀 Start Backend Server (FastAPI)
+
+To run the backend server with auto-reload enabled during development, execute either of the following commands in your terminal:
+
+```bash
 uvicorn backend.app.main:app --reload
-The interactive Swagger documentation will be available at: http://localhost:8000/docs
 
-3. Start Frontend UI (Streamlit)
-Open a separate terminal window and run:
+### 🌐 Start Frontend UI (Streamlit)
 
-Bash
+To run the frontend user interface during development, execute either of the following commands in a separate terminal window:
+
+```bash
 streamlit run frontend/app.py
-The user dashboard will open automatically in your browser at: http://localhost:8501
