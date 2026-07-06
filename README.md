@@ -4,7 +4,7 @@ An AI-powered web application designed to process corporate event briefs, genera
 
 ## 🚀 Live Application
 The project is continuously deployed and accessible online:
-👉 **[Insert Your Streamlit App URL Here]**
+👉 **https://personalized-networking-app.streamlit.app/**
 
 ---
 
