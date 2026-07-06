@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 
 st.set_page_config(page_title="Personalized Networking Assistant", layout="wide")
-BACKEND_URL = "http://127.0.0.1:8000/api"
+BACKEND_URL = st.secrets.get("BACKEND_URL", "https://personalized-networking-assistant-xaa1.onrender.com")
 
 st.title("🤝 Personalized Networking Assistant")
 st.write("Extract smart themes, generate contextual starters, and quick-verify facts instantly.")
