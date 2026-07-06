@@ -3,12 +3,15 @@ from pydantic import BaseModel
 from typing import List, Optional
 from sqlalchemy.orm import Session
 import json
+import os
+import uvicorn
 
-from backend.app.database import engine, Base, get_db
-from backend.app.models import ConversationHistory
-from backend.app.services.analyzer import EventAnalyzerService
-from backend.app.services.generator import TopicGeneratorService
-from backend.app.services.fact_checker import FactCheckerService
+
+from app.database import engine, Base, get_db
+from app.models import ConversationHistory
+from app.services.analyzer import EventAnalyzerService
+from app.services.generator import TopicGeneratorService
+from app.services.fact_checker import FactCheckerService
 
 # Create database tables dynamically
 Base.metadata.create_all(bind=engine)
@@ -81,3 +84,7 @@ def log_feedback(req: FeedbackRequest, db: Session = Depends(get_db)):
     record.useful = req.useful
     db.commit()
     return {"status": "success", "msg": "Feedback updated in SQLite schema database successfully."}
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run("app.main:app", host="0.0.0.0", port=port)
